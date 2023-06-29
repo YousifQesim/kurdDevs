@@ -1,32 +1,11 @@
-package com.KurdDevs.KurdDevs.model;
+package com.KurdDevs.KurdDevs.DTO;
 
-import javax.persistence.*;
-import java.io.Serializable;
+public class UserLoginDto {
 
-@Entity
-@Table(name = "users")
-public class User implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
     private String username;
-
-    @Column(nullable = false)
     private String password;
-
-    @Column(nullable = false, unique = true)
     private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // Constructors, getters, setters, and other properties
 
     public String getUsername() {
         return username;
@@ -51,7 +30,6 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 // ...
 }

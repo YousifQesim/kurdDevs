@@ -1,0 +1,28 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto max-w-md py-8">
+  <h2 class="text-2xl font-bold mb-4">User Login</h2>
+  <form th:action="@{/api/login}" method="post" th:object="${userLoginDto}" class="space-y-4">
+    <div>
+      <label class="block mb-1 font-semibold">Email:</label>
+      <input type="text" th:field="*{email}" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-500"></span>
+    </div>
+    <div>
+      <label class="block mb-1 font-semibold">Password:</label>
+      <input type="password" th:field="*{password}" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-red-500"></span>
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Login</button>
+  </form>
+</div>
+</body>
+</html>

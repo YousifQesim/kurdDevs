@@ -1,11 +1,10 @@
-package com.KurdDevs.KurdDevs.controller;
+package com.KurdDevs.KurdDevs.DTO;
 
-public class UserLoginDto {
+public class UserDto {
 
     private String username;
+    private String email;
     private String password;
-
-    // Constructors, getters, setters, and other properties
 
     public String getUsername() {
         return username;
@@ -13,6 +12,14 @@ public class UserLoginDto {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -23,9 +30,12 @@ public class UserLoginDto {
         this.password = password;
     }
 
-    public UserLoginDto(String username, String password) {
+    public UserDto() {
         this.username = username;
+        this.email = email;
         this.password = password;
     }
-// ...
+    // Constructors, getters, setters, and other properties
+
+    // ...
 }

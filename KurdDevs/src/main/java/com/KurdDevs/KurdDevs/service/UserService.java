@@ -1,39 +1,24 @@
 package com.KurdDevs.KurdDevs.service;
 
 import com.KurdDevs.KurdDevs.Repo.UserRepository;
-import com.KurdDevs.KurdDevs.controller.UserDto;
-import com.KurdDevs.KurdDevs.controller.UserLoginDto;
+import com.KurdDevs.KurdDevs.DTO.UserDto;
 import com.KurdDevs.KurdDevs.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    public UsernamePasswordAuthenticationToken loginUser;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                user.getPassword(),
-                Collections.emptyList()
-        );
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User registerUser(UserDto userDto) {
@@ -55,12 +40,13 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user);
     }
 
-    public UsernamePasswordAuthenticationToken loginUser(UserLoginDto userLoginDto) {
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                userLoginDto.getUsername(),
-                userLoginDto.getPassword()
-        );
+    public boolean authenticateUserByEmail(String email, String password) {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            return false; // User not found
+        }
 
-        return authentication;
+        // Compare the provided password with the stored password
+        return passwordEncoder.matches(password, user.getPassword());
     }
 }
