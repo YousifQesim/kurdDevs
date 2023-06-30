@@ -1,8 +1,11 @@
 package com.KurdDevs.KurdDevs.DTO;
 
+import jakarta.validation.constraints.Email;
+
 public class UserDto {
 
     private String username;
+    @Email(message = "Invalid email format")
     private String email;
     private String password;
 

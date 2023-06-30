@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result) {
+    public String registerUser(@Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "registration";
         }
@@ -41,6 +41,9 @@ public class UserController {
         try {
             User createdUser = userService.registerUser(userDto);
             // Perform additional actions if needed
+
+            // Add success message to the model
+            model.addAttribute("successMessage", "User registration successful!");
         } catch (Exception e) {
             result.reject("error.user", e.getMessage());
             return "registration";
@@ -56,7 +59,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@Valid @ModelAttribute("userLoginDto") UserLoginDto userLoginDto, BindingResult result) {
+    public String loginUser(@Valid @ModelAttribute("userLoginDto") UserLoginDto userLoginDto, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "login";
         }
@@ -75,15 +78,16 @@ public class UserController {
                 // Redirect to the dashboard page
                 return "redirect:/dashboard";
             } else {
-                // Handle login error
-                result.reject("error.user", "Invalid email or password");
+                // Add error message to the model
+                model.addAttribute("errorMessage", "Invalid email or password");
                 return "login";
             }
         } catch (Exception e) {
-            // Handle login error
-            result.reject("error.user", e.getMessage());
+            // Add error message to the model
+            model.addAttribute("errorMessage", e.getMessage());
             return "login";
         }
     }
+
 
 }
