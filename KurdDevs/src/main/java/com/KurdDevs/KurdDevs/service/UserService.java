@@ -35,9 +35,7 @@ public class UserService {
     }
     public User registerUser(UserDto userDto) {
         User existingUser = userRepository.findByUsername(userDto.getUsername());
-        if (existingUser != null) {
-            throw new RuntimeException("Username already exists");
-        }
+
 
         existingUser = userRepository.findByEmail(userDto.getEmail());
         if (existingUser != null) {
@@ -75,5 +73,9 @@ public class UserService {
             return passwordEncoder.matches(password, user.getPassword());
         }
         return false;
+    }
+
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }

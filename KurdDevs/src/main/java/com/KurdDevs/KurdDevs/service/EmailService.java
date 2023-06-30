@@ -28,7 +28,7 @@ public class EmailService {
         try {
             // Compose the email message
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("KurdDevsTeam@gmail.com"));
+            message.setFrom(new InternetAddress("kurddevs1@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
             message.setSubject("Account Activation");
 

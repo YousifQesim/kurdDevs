@@ -35,18 +35,24 @@ public class UserController {
         if (result.hasErrors()) {
             return "registration";
         }
-
         try {
+            User existingUser = userService.getUserByEmail(userDto.getEmail());
+            if (existingUser != null) {
+                model.addAttribute("errorMessage", "User with the provided email already exists.");
+                return "registration";
+            }
+
             User createdUser = userService.registerUser(userDto);
             userService.sendActivationEmail(createdUser.getEmail(), createdUser.getActivationToken());
 
             model.addAttribute("successMessage", "User registration successful! Please check your email for activation instructions.");
+            return "registration";
         } catch (Exception e) {
             result.reject("error.user", e.getMessage());
             return "registration";
         }
 
-        return "redirect:/login";
+
     }
 
     @GetMapping("/activate")
