@@ -6,26 +6,24 @@ import com.KurdDevs.KurdDevs.model.User;
 import com.KurdDevs.KurdDevs.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+
+
 @Controller
-@RequestMapping("")
+@RequestMapping("/")
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
-
-    @GetMapping("/")
-    public String redirectToSignUp() {
-
-        return "redirect:/register";
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("userDto", new UserDto());
@@ -40,13 +38,28 @@ public class UserController {
 
         try {
             User createdUser = userService.registerUser(userDto);
-            // Perform additional actions if needed
+            userService.sendActivationEmail(createdUser.getEmail(), createdUser.getActivationToken());
 
-            // Add success message to the model
-            model.addAttribute("successMessage", "User registration successful!");
+            model.addAttribute("successMessage", "User registration successful! Please check your email for activation instructions.");
         } catch (Exception e) {
             result.reject("error.user", e.getMessage());
             return "registration";
+        }
+
+        return "redirect:/login";
+    }
+
+    @GetMapping("/activate")
+    public String activateUser(@RequestParam("activationToken") String activationToken, Model model) {
+        User user = userService.getUserByActivationToken(activationToken);
+
+        if (user != null) {
+            user.setActivated(true);
+            userService.saveUser(user);
+
+            model.addAttribute("successMessage", "Your account has been activated successfully!");
+        } else {
+            model.addAttribute("errorMessage", "Invalid activation token");
         }
 
         return "redirect:/login";
@@ -65,29 +78,17 @@ public class UserController {
         }
 
         try {
-            // Authenticate the user using your authentication logic
-            // For example, you can use Spring Security's AuthenticationManager
-            // and AuthenticationProvider to authenticate the user credentials
-
-            // Replace the following line with your authentication logic
             boolean isAuthenticated = userService.authenticateUserByEmail(userLoginDto.getEmail(), userLoginDto.getPassword());
 
             if (isAuthenticated) {
-                // Perform additional actions after successful login, e.g., set authentication in SecurityContext
-
-                // Redirect to the dashboard page
                 return "redirect:/dashboard";
             } else {
-                // Add error message to the model
                 model.addAttribute("errorMessage", "Invalid email or password");
                 return "login";
             }
         } catch (Exception e) {
-            // Add error message to the model
             model.addAttribute("errorMessage", e.getMessage());
             return "login";
         }
     }
-
-
 }

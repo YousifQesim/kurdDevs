@@ -1,24 +1,34 @@
 package com.KurdDevs.KurdDevs.model;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String username;
+    @Column(name = "activated")
+    private boolean activated;
 
-    @Column(nullable = false)
+    @Column(name = "activation_token")
+    private String activationToken;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "password")
     private String password;
 
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Column(name = "username") // Add this line
+    private String username;
 
     public Long getId() {
         return id;
@@ -28,20 +38,20 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public boolean isActivated() {
+        return activated;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setActivated(boolean activated) {
+        this.activated = activated;
     }
 
-    public String getPassword() {
-        return password;
+    public String getActivationToken() {
+        return activationToken;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setActivationToken(String activationToken) {
+        this.activationToken = activationToken;
     }
 
     public String getEmail() {
@@ -52,6 +62,19 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
-// ...
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
