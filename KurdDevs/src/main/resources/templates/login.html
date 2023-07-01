@@ -28,7 +28,16 @@
       <input type="password" id="password" name="password" required placeholder="Enter your password" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
       <span id="passwordError" class="error-message"></span>
     </div>
+    <div class="flex mx-2 items-center">
+
+
     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Login</button>
+    <p class="mx-4">
+      Don't have an account yet?
+      <a href="/register" class="text-blue-500 hover:text-blue-700 font-semibold">Register</a>
+    </p>
+    </div>
+
   </form>
   <div th:if="${errorMessage}" class="bg-red-200 text-red-800 p-4 my-2 rounded">
     <p th:text="${errorMessage}"></p>
