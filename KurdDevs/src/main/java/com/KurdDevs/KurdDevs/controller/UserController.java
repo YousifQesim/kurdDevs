@@ -2,6 +2,8 @@ package com.KurdDevs.KurdDevs.controller;
 
 import com.KurdDevs.KurdDevs.DTO.UserDto;
 import com.KurdDevs.KurdDevs.DTO.UserLoginDto;
+import com.KurdDevs.KurdDevs.Repo.UserRepository;
+import com.KurdDevs.KurdDevs.cookies.CookieUtils;
 import com.KurdDevs.KurdDevs.model.User;
 import com.KurdDevs.KurdDevs.service.UserService;
 import jakarta.validation.Valid;
@@ -11,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 
 @Controller
@@ -18,10 +23,12 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/register")
@@ -78,7 +85,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@Valid @ModelAttribute("userLoginDto") UserLoginDto userLoginDto, BindingResult result, Model model) {
+    public String loginUser(@Valid @ModelAttribute("userLoginDto") UserLoginDto userLoginDto, BindingResult result, Model model, HttpServletResponse response) {
         if (result.hasErrors()) {
             return "login";
         }
@@ -92,6 +99,9 @@ public class UserController {
                     model.addAttribute("errorMessage", "Your account is not activated. Please check your email for activation instructions.");
                     return "login";
                 } else {
+                    // Add the cookie here
+                    CookieUtils.addCookie(response, "loggedInUser", user.getEmail(), 3600, "/");
+
                     return "redirect:/dashboard";
                 }
             } else {
@@ -103,5 +113,31 @@ public class UserController {
             return "login";
         }
     }
+    @GetMapping("/")
+    public String RedirectToDashboard(Model model, HttpServletRequest request) {
+        // Check if the user is logged in by verifying the presence of the "loggedInUser" cookie
+        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUser == null) {
+            return "redirect:/login"; // Redirect to the login page if the cookie is not present
+        }
 
+        // Continue with rendering the dashboard page
+        // ...
+        return "redirect:/dashboard";
+    }
+
+    @GetMapping("/dashboard")
+    public String showDashboard(Model model, HttpServletRequest request) {
+        // Check if the user is logged in by verifying the presence of the "loggedInUser" cookie
+        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUser == null) {
+            return "redirect:/login"; // Redirect to the login page if the cookie is not present
+        }
+
+        // Continue with rendering the dashboard page
+        // ...
+        List<User> AllUsers = userRepository.findAll();
+        model.addAttribute("Allusers", AllUsers);
+        return "/dashboardpage";
+    }
 }

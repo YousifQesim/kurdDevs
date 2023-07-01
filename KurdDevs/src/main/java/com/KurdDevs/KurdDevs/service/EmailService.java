@@ -1,5 +1,8 @@
 package com.KurdDevs.KurdDevs.service;
 
+import com.KurdDevs.KurdDevs.Repo.UserRepository;
+import com.KurdDevs.KurdDevs.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -9,6 +12,16 @@ import java.util.Properties;
 
 @Service
 public class EmailService {
+    @Autowired
+    private final UserRepository userRepository;
+
+
+    @Autowired
+    public EmailService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+
+    }
+
 
     public void sendActivationEmail(String recipientEmail, String activationToken) {
         // Configure the email properties and session
@@ -17,7 +30,8 @@ public class EmailService {
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-
+        User user = userRepository.findByActivationToken(activationToken);
+        String username = user.getUsername();
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -33,7 +47,7 @@ public class EmailService {
             message.setSubject("Account Activation");
 
             String emailText = "<html><body>"
-                    + "<b><p>Hello Dear!,</p></b>"
+                    + "<b><h1>Dear "+username+"</h1></b>"
                     + "<p>Thank you for registering with our platform. To activate your account, please click on the following link:</p>"
                     + "<a href=\"http://localhost:8080/activate?activationToken=" + activationToken + "\">Activate Account</a>\n\n"
                     + "<p>We appreciate your interest and look forward to providing you with a great user experience.</p>"
