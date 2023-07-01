@@ -87,7 +87,13 @@ public class UserController {
             boolean isAuthenticated = userService.authenticateUserByEmail(userLoginDto.getEmail(), userLoginDto.getPassword());
 
             if (isAuthenticated) {
-                return "redirect:/dashboard";
+                User user = userService.getUserByEmail(userLoginDto.getEmail());
+                if (!user.isActivated()) {
+                    model.addAttribute("errorMessage", "Your account is not activated. Please check your email for activation instructions.");
+                    return "login";
+                } else {
+                    return "redirect:/dashboard";
+                }
             } else {
                 model.addAttribute("errorMessage", "Invalid email or password");
                 return "login";
@@ -97,4 +103,5 @@ public class UserController {
             return "login";
         }
     }
+
 }
