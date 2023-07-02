@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Add your head elements -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="text-center mb-4">
+    <p class="text-xl font-bold">Username: <span th:text="${username}"></span></p>
+    <p class="text-xl font-bold">Email: <span th:text="${email}"></span></p>
+</div>
+
+<h1 class="text-2xl font-bold mb-4">User Profile</h1>
+<form action="#" th:action="@{/profile/save}" method="post" enctype="multipart/form-data" th:object="${user}" class="max-w-sm mx-auto">
+
+    <div class="mb-4">
+        <label class="block mb-2">Major:</label>
+        <input type="text" th:field="*{major}" class="border border-gray-300 rounded px-2 py-1 w-full">
+    </div>
+    <div class="mb-4">
+        <label class="block mb-2">Profile Image:</label>
+        <input type="file" name="profileImage" class="border border-gray-300 rounded px-2 py-1 w-full">
+    </div>
+    <div class="mb-4">
+        <label class="block mb-2">About:</label>
+        <textarea th:field="*{aboutSection}" class="border border-gray-300 rounded px-2 py-1 w-full"></textarea>
+    </div>
+    <div class="mb-4">
+        <label class="block mb-2">GitHub URL:</label>
+        <input type="url" th:field="*{githubUrl}" class="border border-gray-300 rounded px-2 py-1 w-full">
+    </div>
+    <div class="mb-4">
+        <label class="block mb-2">LinkedIn URL:</label>
+        <input type="url" th:field="*{linkedinUrl}" class="border border-gray-300 rounded px-2 py-1 w-full">
+    </div>
+    <div class="mb-4">
+        <label class="block mb-2">PDF CV:</label>
+        <input type="file" name="pdfCv" class="border border-gray-300 rounded px-2 py-1 w-full">
+    </div>
+    <div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save</button>
+    </div>
+</form>
+</body>
+</html>

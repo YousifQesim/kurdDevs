@@ -5,6 +5,7 @@ import com.KurdDevs.KurdDevs.DTO.UserLoginDto;
 import com.KurdDevs.KurdDevs.Repo.UserRepository;
 import com.KurdDevs.KurdDevs.cookies.CookieUtils;
 import com.KurdDevs.KurdDevs.model.User;
+import com.KurdDevs.KurdDevs.service.EmailService;
 import com.KurdDevs.KurdDevs.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-
 
 @Controller
 @RequestMapping("/")
@@ -24,12 +26,16 @@ public class UserController {
 
     private final UserService userService;
     private final UserRepository userRepository;
+    private final EmailService emailService;
 
     @Autowired
-    public UserController(UserService userService, UserRepository userRepository) {
+
+    public UserController(UserService userService, UserRepository userRepository, EmailService emailService) {
         this.userService = userService;
         this.userRepository = userRepository;
+        this.emailService = emailService;
     }
+
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
@@ -50,7 +56,7 @@ public class UserController {
             }
 
             User createdUser = userService.registerUser(userDto);
-            userService.sendActivationEmail(createdUser.getEmail(), createdUser.getActivationToken());
+            emailService.sendActivationEmail(createdUser.getEmail(), createdUser.getActivationToken());
 
             model.addAttribute("successMessage", "User registration successful! Please check your email for activation instructions.");
             return "registration";
@@ -58,25 +64,36 @@ public class UserController {
             result.reject("error.user", e.getMessage());
             return "registration";
         }
-
-
     }
+
 
     @GetMapping("/activate")
     public String activateUser(@RequestParam("activationToken") String activationToken, Model model) {
-        User user = userService.getUserByActivationToken(activationToken);
+        try {
+            String decodedToken = URLDecoder.decode(activationToken, StandardCharsets.UTF_8.toString());
+            User user = userService.getUserByActivationToken(decodedToken);
 
-        if (user != null) {
-            user.setActivated(true);
-            userService.saveUser(user);
+            if (user != null) {
+                user.setActivated(true);
+                userService.saveUser(user);
 
-            model.addAttribute("successMessage", "Your account has been activated successfully!");
-        } else {
+                // Add success message to the model
+                model.addAttribute("successMessage", "Your account has been activated successfully!");
+
+                // Add toast message to the model
+                model.addAttribute("toastTitle", "Account Activated");
+                model.addAttribute("toastMessage", "Your account has been activated successfully!");
+            } else {
+                model.addAttribute("errorMessage", "Invalid activation token");
+            }
+        } catch (Exception e) {
             model.addAttribute("errorMessage", "Invalid activation token");
         }
 
-        return "redirect:/login";
+        // Redirect with a query parameter indicating the activation status
+        return "redirect:/login?activated=true";
     }
+
 
     @GetMapping("/login")
     public String showLoginForm(Model model) {
@@ -91,10 +108,9 @@ public class UserController {
         }
 
         try {
-            boolean isAuthenticated = userService.authenticateUserByEmail(userLoginDto.getEmail(), userLoginDto.getPassword());
+            User user = userService.authenticateUser(userLoginDto.getEmail(), userLoginDto.getPassword());
 
-            if (isAuthenticated) {
-                User user = userService.getUserByEmail(userLoginDto.getEmail());
+            if (user != null) {
                 if (!user.isActivated()) {
                     model.addAttribute("errorMessage", "Your account is not activated. Please check your email for activation instructions.");
                     return "login";
@@ -113,18 +129,6 @@ public class UserController {
             return "login";
         }
     }
-    @GetMapping("/")
-    public String RedirectToDashboard(Model model, HttpServletRequest request) {
-        // Check if the user is logged in by verifying the presence of the "loggedInUser" cookie
-        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
-        if (loggedInUser == null) {
-            return "redirect:/login"; // Redirect to the login page if the cookie is not present
-        }
-
-        // Continue with rendering the dashboard page
-        // ...
-        return "redirect:/dashboard";
-    }
 
     @GetMapping("/dashboard")
     public String showDashboard(Model model, HttpServletRequest request) {
@@ -135,9 +139,8 @@ public class UserController {
         }
 
         // Continue with rendering the dashboard page
-        // ...
-        List<User> AllUsers = userRepository.findAll();
-        model.addAttribute("Allusers", AllUsers);
-        return "/dashboardpage";
+        List<User> allUsers = userService.getAllUsers();
+        model.addAttribute("allUsers", allUsers);
+        return "dashboardpage";
     }
 }

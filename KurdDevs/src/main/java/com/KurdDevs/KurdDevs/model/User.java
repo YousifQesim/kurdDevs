@@ -27,8 +27,26 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "username") // Add this line
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "major")
+    private String major;
+
+    @Column(name = "profile_image")
+    private String profileImage;
+
+    @Column(name = "about_section")
+    private String aboutSection;
+
+    @Column(name = "github_url")
+    private String githubUrl;
+
+    @Column(name = "linkedin_url")
+    private String linkedinUrl;
+
+    @Column(name = "pdf_cv")
+    private String pdfCv;
 
     public Long getId() {
         return id;
@@ -76,5 +94,53 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
+    public String getAboutSection() {
+        return aboutSection;
+    }
+
+    public void setAboutSection(String aboutSection) {
+        this.aboutSection = aboutSection;
+    }
+
+    public String getGithubUrl() {
+        return githubUrl;
+    }
+
+    public void setGithubUrl(String githubUrl) {
+        this.githubUrl = githubUrl;
+    }
+
+    public String getLinkedinUrl() {
+        return linkedinUrl;
+    }
+
+    public void setLinkedinUrl(String linkedinUrl) {
+        this.linkedinUrl = linkedinUrl;
+    }
+
+    public String getPdfCv() {
+        return pdfCv;
+    }
+
+    public void setPdfCv(String pdfCv) {
+        this.pdfCv = pdfCv;
     }
 }

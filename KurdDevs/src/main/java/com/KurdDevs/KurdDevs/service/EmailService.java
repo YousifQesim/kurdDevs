@@ -8,30 +8,33 @@ import org.springframework.stereotype.Service;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 @Service
 public class EmailService {
-    @Autowired
-    private final UserRepository userRepository;
 
+    private final UserRepository userRepository;
 
     @Autowired
     public EmailService(UserRepository userRepository) {
         this.userRepository = userRepository;
-
     }
 
-
     public void sendActivationEmail(String recipientEmail, String activationToken) {
-        // Configure the email properties and session
+        User user = userRepository.findByEmail(recipientEmail);
+
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        User user = userRepository.findByActivationToken(activationToken);
-        String username = user.getUsername();
+
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -40,27 +43,23 @@ public class EmailService {
         });
 
         try {
-            // Compose the email message
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("kurddevs1@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
             message.setSubject("Account Activation");
-
             String emailText = "<html><body>"
-                    + "<b><h1>Dear "+username+"</h1></b>"
+                    + "<b><h1>Hi Dear " + user.getUsername() + "</h1></b>"
                     + "<p>Thank you for registering with our platform. To activate your account, please click on the following link:</p>"
-                    + "<a href=\"http://localhost:8080/activate?activationToken=" + activationToken + "\">Activate Account</a>\n\n"
+                    + "<a href=\"http://localhost:8080/activate?activationToken=" + URLEncoder.encode(activationToken, StandardCharsets.UTF_8) + "\">Activate Account</a>"
                     + "<p>We appreciate your interest and look forward to providing you with a great user experience.</p>"
-                    + "<p> sincerely </p>"
+                    + "<p>Sincerely,</p>"
                     + "<p><b>KurdDevsTeam(KDT)</b></p>"
                     + "</body></html>";
-            message.setContent(emailText, "text/html");
 
-            // Send the email
+            message.setContent(emailText, "text/html");
             Transport.send(message);
-            System.out.println("Activation email sent successfully");
         } catch (MessagingException e) {
-            System.err.println("Error sending activation email: " + e.getMessage());
+            throw new RuntimeException("Failed to send activation email", e);
         }
     }
 }
