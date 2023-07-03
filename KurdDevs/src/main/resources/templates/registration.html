@@ -36,7 +36,15 @@
         </div>
         <div>
             <label class="block mb-1 font-semibold">Password:</label>
-            <input type="password" id="passwordInput" th:field="*{password}" required placeholder="Enter your password" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="relative">
+                <input type="password" id="passwordInput" th:field="*{password}" required placeholder="Enter your password" class="pass1 border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12">
+                <a id="toggleButton" onclick="togglePasswordVisibility()" class="cursor-pointer absolute inset-y-0 right-0 flex items-center justify-center w-12 bg-transparent text-white rounded-r px-4 py-2 transition duration-300 ease-in-out focus:outline-none">
+
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 12 18.3636 19 12 19C5.63636 19 2 12 2 12C2 12 5.63636 5 12 5C14.8779 5 17.198 6.43162 18.8762 8M9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
             <ul id="passwordRequirements" class="space-y-2 my-2">
                 <li id="requirementLength" class="text-gray-500 text-body-color  flex text-base ">
                     <span class="text-secondary mr-2 rounded-full text-base"><svg width="20" height="20" viewBox="0 0 20 20" class="fill-current relative top-0.5"><path d="M10 19.625C4.6875 19.625 0.40625 15.3125 0.40625 10C0.40625 4.6875 4.6875 0.40625 10 0.40625C15.3125 0.40625 19.625 4.6875 19.625 10C19.625 15.3125 15.3125 19.625 10 19.625ZM10 1.5C5.3125 1.5 1.5 5.3125 1.5 10C1.5 14.6875 5.3125 18.5312 10 18.5312C14.6875 18.5312 18.5312 14.6875 18.5312 10C18.5312 5.3125 14.6875 1.5 10 1.5Z"></path><path d="M8.9375 12.1875C8.71875 12.1875 8.53125 12.125 8.34375 11.9687L6.28125 9.96875C6.0625 9.75 6.0625 9.40625 6.28125 9.1875C6.5 8.96875 6.84375 8.96875 7.0625 9.1875L8.9375 11.0312L12.9375 7.15625C13.1563 6.9375 13.5 6.9375 13.7188 7.15625C13.9375 7.375 13.9375 7.71875 13.7188 7.9375L9.5625 12C9.34375 12.125 9.125 12.1875 8.9375 12.1875Z"></path></svg></span>
@@ -59,6 +67,23 @@
                     At least one special character</li>
             </ul>
             <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-message"></span>
+        </div>
+        <div>
+            <label class="block mb-1 font-semibold">Confirm Password:</label>
+            <div class="relative">
+                <input type="password" id="passwordInput1" th:field="*{confirmPassword}" required placeholder="Confirm your password" class="pass1 border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12">
+                <a id="toggleButton1" onclick="togglePasswordVisibility1()" class=" cursor-pointer absolute inset-y-0 right-0 flex items-center justify-center w-12 bg-transparent text-white rounded-r px-4 py-2 transition duration-300 ease-in-out focus:outline-none">
+
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 12 18.3636 19 12 19C5.63636 19 2 12 2 12C2 12 5.63636 5 12 5C14.8779 5 17.198 6.43162 18.8762 8M9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>            <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="error-message"></span>
+
+
+
+
+
         </div>
 
         <div class="flex mx-2 items-center">
@@ -124,6 +149,57 @@ function checkPasswordRequirements() {
 
 
 </script>
+<script>
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("passwordInput");
+    var toggleButton = document.getElementById("toggleButton");
 
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleButton.innerHTML = `
+
+<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 12C22 12 18.3636 19 12 19C5.63636 19 2 12 2 12C2 12 5.63636 5 12 5C14.8779 5 17.198 6.43162 18.8762 8M9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      `;
+    } else {
+      passwordInput.type = "password";
+      toggleButton.innerHTML = `
+               <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L22 22" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.71277 6.7226C3.66479 8.79527 2 12 2 12C2 12 5.63636 19 12 19C14.0503 19 15.8174 18.2734 17.2711 17.2884M11 5.05822C11.3254 5.02013 11.6588 5 12 5C18.3636 5 22 12 22 12C22 12 21.3082 13.3317 20 14.8335" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.1764 9.33193 10.4303 9.86932 9.88818" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      `;
+    }
+  }
+</script>
+<script>
+  function togglePasswordVisibility1() {
+    var passwordInput1 = document.getElementById("passwordInput1");
+    var toggleButton1 = document.getElementById("toggleButton1");
+
+    if (passwordInput1.type === "password") {
+      passwordInput1.type = "text";
+      toggleButton1.innerHTML = `
+
+<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 12C22 12 18.3636 19 12 19C5.63636 19 2 12 2 12C2 12 5.63636 5 12 5C14.8779 5 17.198 6.43162 18.8762 8M9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      `;
+    } else {
+      passwordInput1.type = "password";
+      toggleButton1.innerHTML = `
+               <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L22 22" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.71277 6.7226C3.66479 8.79527 2 12 2 12C2 12 5.63636 19 12 19C14.0503 19 15.8174 18.2734 17.2711 17.2884M11 5.05822C11.3254 5.02013 11.6588 5 12 5C18.3636 5 22 12 22 12C22 12 21.3082 13.3317 20 14.8335" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.1764 9.33193 10.4303 9.86932 9.88818" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      `;
+    }
+  }
+</script>
 </body>
 </html>

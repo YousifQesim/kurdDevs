@@ -45,6 +45,10 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result, Model model) {
+
+        if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
+            result.rejectValue("confirmPassword", "error.userDto", "Passwords do not match");
+        }
         if (result.hasErrors()) {
             return "registration";
         }

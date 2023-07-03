@@ -8,7 +8,23 @@ public class UserDto {
     @Email(message = "Invalid email format")
     private String email;
     private String password;
+    private String major;
 
+
+    private String profileImage;
+
+
+    private String aboutSection;
+
+
+    private String githubUrl;
+
+
+    private String linkedinUrl;
+
+
+    private String pdfCv;
+    private String ConfirmPassword;
     public String getUsername() {
         return username;
     }
@@ -33,12 +49,62 @@ public class UserDto {
         this.password = password;
     }
 
-    public UserDto() {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+    public String getMajor() {
+        return major;
     }
-    // Constructors, getters, setters, and other properties
 
-    // ...
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
+    public String getAboutSection() {
+        return aboutSection;
+    }
+
+    public void setAboutSection(String aboutSection) {
+        this.aboutSection = aboutSection;
+    }
+
+    public String getGithubUrl() {
+        return githubUrl;
+    }
+
+    public void setGithubUrl(String githubUrl) {
+        this.githubUrl = githubUrl;
+    }
+
+    public String getLinkedinUrl() {
+        return linkedinUrl;
+    }
+
+    public void setLinkedinUrl(String linkedinUrl) {
+        this.linkedinUrl = linkedinUrl;
+    }
+
+    public String getPdfCv() {
+        return pdfCv;
+    }
+
+    public void setPdfCv(String pdfCv) {
+        this.pdfCv = pdfCv;
+    }
+
+    public String getConfirmPassword() {
+        return ConfirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        ConfirmPassword = confirmPassword;
+    }
+
+
+// ...
 }
