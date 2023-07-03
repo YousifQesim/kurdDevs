@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+  <title>Multi-Step Form</title>
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Roboto+Condensed:wght@700&display=swap');
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .step-indicator .step {
+      position: relative;
+    }
+
+    .step-indicator .step::before {
+      content: attr(data-step);
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      color: #2563EB;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #2563EB;
+      transition: background-color 0.3s ease;
+    }
+
+    .step-indicator .line {
+      flex-grow: 1;
+      height: 4px;
+      background-color: #CBD5E0;
+      transition: background-color 0.3s ease;
+    }
+
+    .step-indicator .line:first-child {
+      background-color: transparent;
+    }
+
+    .step-indicator .line.active {
+      background-color: #2563EB;
+      transition: background-color 0.3s ease;
+    }
+
+    .step-indicator .step.active::before {
+      background-color: #2563EB;
+      color: #FFFFFF;
+      transition: background-color 0.3s ease;
+    }
+    p{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:16px;
+    }
+    h1,h2{
+    font-family: 'Merriweather', serif;
+    }
+  </style>
+
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto text-center">
+  <h1 class="text-4xl font-bold my-8">Short description about KurdDevs</h1>
+  <p class="text-lg"></p>
+</div>
+
+<div class="container mx-auto py-10">
+
+  <!-- Step 1: Sign Up Form -->
+  <div id="step-1" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg h-72">
+    <h2 class="text-2xl font-bold mb-4">User Registration Form</h2>
+    <p class="mb-4 text-gray-700 ">
+      Welcome to our incredible platform! Create an account now and unlock a world of endless possibilities. Sign up today by providing your desired username, email address, and password. This simple step is your gateway to building a personalized profile and gaining access to our extraordinary features. Join us today!
+    </p>
+    <!-- Sign up form fields -->
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" type="button" onclick="nextStep(2)">
+      Next
+    </button>
+  </div>
+  <!-- Step 2: Login Form -->
+  <div id="step-2" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg hidden h-72">
+    <h2 class="text-2xl font-bold mb-4">User Login Form</h2>
+    <p class="mb-4 text-gray-700">
+
+      Registered users can authenticate into their account through this form. By providing their credentials like username/email and password, they gain authorized access to their profile and dashboard. Experience seamless navigation and personalized control with this efficient login system. Join us now to unlock your account's full potential!
+    </p>    <!-- Login form fields -->
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" type="button" onclick="nextStep(3)">
+      Next
+    </button>
+  </div>
+
+
+
+  <!-- Step 3: Profile Page -->
+  <div id="step-3" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg hidden h-72">
+    <h2 class="text-2xl font-bold mb-4">User Profile Management</h2>
+    <p class="mb-4 text-gray-700">
+      The profile page empowers registered users to customize and manage their personal information effortlessly. Modify email, password, academic major, upload a profile image, and craft an about section. Enhance your profile further by adding GitHub and LinkedIn URLs. Take control and make your profile truly yours!    </p>
+    <!-- Profile page fields -->
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" type="button" onclick="nextStep(4)">
+      Next
+    </button>
+  </div>
+
+  <!-- Step 4: Dashboard -->
+  <div id="step-4" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg hidden h-72">
+    <h2 class="text-2xl font-bold mb-4">Developer Dashboard</h2>
+    <p class="mb-4 text-gray-700">
+
+      The dashboard serves as a central hub, presenting vital details about the user's profile. It showcases the developer's profile image, name, age, and email address. By clicking the "View More" button, users can delve into comprehensive information about the developer, unlocking a deeper understanding. Explore and connect on a whole new level!    </p>
+    <!-- Dashboard content -->
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" type="button" onclick="nextStep(5)">
+      Next
+    </button>
+  </div>
+
+  <!-- Step 5: View More -->
+  <div id="step-5" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg hidden h-72">
+    <h2 class="text-2xl font-bold mb-4"> Detailed User Information</h2>
+    <p class="mb-4 text-gray-700">This page provides an in-depth view of a developer's profile. By clicking the "View More" button on the dashboard, users can access additional information such as the developer's image, full name, email address, academic major, an about section describing their skills and experience, links to their LinkedIn and GitHub profiles</p>
+
+    <a href="/login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full text-center" type="button">
+      Continue To Website
+    </a>
+    <!-- View more content -->
+  </div>
+  <div class="step-indicator relative top-12">
+    <div class="step active" data-step="1"></div>
+    <div class="line"></div>
+    <div class="step" data-step="2"></div>
+    <div class="line"></div>
+    <div class="step" data-step="3"></div>
+    <div class="line"></div>
+    <div class="step" data-step="4"></div>
+    <div class="line"></div>
+    <div class="step" data-step="5"></div>
+  </div>
+</div>
+
+<script>
+    let currentStep = 1;
+    const steps = document.querySelectorAll('.step');
+    const lines = document.querySelectorAll('.line');
+
+    function nextStep(step) {
+      document.getElementById(`step-${currentStep}`).classList.add('hidden');
+      document.getElementById(`step-${step}`).classList.remove('hidden');
+      steps[currentStep - 1].classList.add('active');
+      lines[currentStep - 1].classList.add('active');
+      currentStep = step;
+    }
+  </script>
+</body>
+</html>

@@ -36,6 +36,15 @@ public class UserController {
         this.emailService = emailService;
     }
 
+    @GetMapping("/")
+    public String Homepage(Model model, HttpServletRequest request) {
+        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUser != null) {
+            return "redirect:/dashboard"; // Redirect to the login page if the cookie is not present
+        }
+        model.addAttribute("userDto", new UserDto());
+        return "MultiStepHome";
+    }
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
@@ -100,7 +109,11 @@ public class UserController {
 
 
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
+    public String showLoginForm(Model model, HttpServletRequest request) {
+        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUser != null) {
+            return "redirect:/dashboard"; // Redirect to the login page if the cookie is not present
+        }
         model.addAttribute("userLoginDto", new UserLoginDto());
         return "login";
     }
