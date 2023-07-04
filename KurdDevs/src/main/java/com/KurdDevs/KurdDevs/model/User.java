@@ -1,11 +1,6 @@
 package com.KurdDevs.KurdDevs.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -33,9 +28,6 @@ public class User {
     @Column(name = "major")
     private String major;
 
-    @Column(name = "profile_image")
-    private String profileImage;
-
     @Column(name = "about_section")
     private String aboutSection;
 
@@ -47,10 +39,9 @@ public class User {
 
     @Column(name = "pdf_cv")
     private String pdfCv;
+    @Column(name = "profileImage")
+    private String profileImage;
 
-    public Long getId() {
-        return id;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -105,7 +96,7 @@ public class User {
     }
 
     public String getProfileImage() {
-        return profileImage;
+        return this.profileImage;
     }
 
     public void setProfileImage(String profileImage) {
@@ -143,4 +134,6 @@ public class User {
     public void setPdfCv(String pdfCv) {
         this.pdfCv = pdfCv;
     }
+
+
 }

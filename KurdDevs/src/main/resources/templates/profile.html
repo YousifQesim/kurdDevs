@@ -20,9 +20,9 @@
         <label class="block mb-2">Major:</label>
         <input type="text" th:field="*{major}" class="border border-gray-300 rounded px-2 py-1 w-full">
     </div>
-    <div class="mb-4">
-        <label class="block mb-2">Profile Image:</label>
-        <input type="file" name="profileImage" class="border border-gray-300 rounded px-2 py-1 w-full">
+    <div class="form-group mb-4">
+        <label for="profileImage">Profile Image</label>
+        <input type="file" id="profileImage" name="profileImage" accept="image/*">
     </div>
     <div class="mb-4">
         <label class="block mb-2">About:</label>
