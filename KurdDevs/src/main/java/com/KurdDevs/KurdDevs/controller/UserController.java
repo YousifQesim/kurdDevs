@@ -156,8 +156,11 @@ public class UserController {
         }
 
         // Continue with rendering the dashboard page
-        List<User> allUsers = userService.getAllUsers();
-        model.addAttribute("allUsers", allUsers);
-        return "dashboardpage";
+
+        List<User> users = userRepository.findAll(); // Retrieve all users from the UserRepository
+
+        model.addAttribute("users", users); // Add the users list to the model
+
+        return "dashboardPage";
     }
 }
