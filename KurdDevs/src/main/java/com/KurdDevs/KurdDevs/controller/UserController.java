@@ -70,8 +70,8 @@ public class UserController {
 
             User createdUser = userService.registerUser(userDto);
             emailService.sendActivationEmail(createdUser.getEmail(), createdUser.getActivationToken());
-
-            model.addAttribute("successMessage", "User registration successful! Please check your email for activation instructions.");
+            System.out.println("email sended");
+            model.addAttribute("successMessage", "User registration successful! Please check your email, including your spam folder, for activation instructions.");
             return "registration";
         } catch (Exception e) {
             result.reject("error.user", e.getMessage());
@@ -130,6 +130,7 @@ public class UserController {
             if (user != null) {
                 if (!user.isActivated()) {
                     model.addAttribute("errorMessage", "Your account is not activated. Please check your email for activation instructions.");
+
                     return "login";
                 } else {
                     // Add the cookie here
