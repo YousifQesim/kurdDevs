@@ -77,6 +77,8 @@ public class ProfileController {
         user.setAboutSection(userDto.getAboutSection());
         user.setGithubUrl(userDto.getGithubUrl());
         user.setLinkedinUrl(userDto.getLinkedinUrl());
+        user.setPhoneNumber(userDto.getPhoneNumber());
+        user.setLocation(userDto.getLocation());
         // Update other fields as needed
 
         // Handle profile image

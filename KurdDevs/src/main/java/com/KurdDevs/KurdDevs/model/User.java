@@ -28,8 +28,10 @@ public class User {
     @Column(name = "major")
     private String major;
 
-    @Column(name = "about_section")
+    @Column(name = "about_section", columnDefinition = "TEXT")
+    @Lob
     private String aboutSection;
+
 
     @Column(name = "github_url")
     private String githubUrl;
@@ -42,6 +44,11 @@ public class User {
     @Column(name = "profileImage")
     private String profileImage;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "location")
+    private String location;
 
     public void setId(Long id) {
         this.id = id;
@@ -135,5 +142,23 @@ public class User {
         this.pdfCv = pdfCv;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

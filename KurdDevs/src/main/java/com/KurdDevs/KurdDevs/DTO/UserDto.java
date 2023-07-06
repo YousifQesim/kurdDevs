@@ -25,6 +25,9 @@ public class UserDto {
 
     private String pdfCv;
     private String ConfirmPassword;
+
+    private String phoneNumber;
+    private String location;
     public String getUsername() {
         return username;
     }
@@ -105,6 +108,20 @@ public class UserDto {
         ConfirmPassword = confirmPassword;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 // ...
 }
