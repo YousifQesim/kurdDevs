@@ -146,8 +146,8 @@ font-family: 'Inter', sans-serif;
   </span>
 
       </div>
-      <div class="flex justify-center md:justify-start xl:absolute xl:bottom-8 mx-2">
-          <span th:if="${not #strings.isEmpty(user.githubUrl)}">
+      <div class="flex justify-center md:justify-start xl:absolute xl:bottom-8 ">
+          <span th:if="${not #strings.isEmpty(user.githubUrl)}" class="mx-2">
                       <a th:href="${user.githubUrl}" class="text-blue-500 hover:underline mx-2">
     <img alt="Font Awesome 5 brands github.svg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/116px-Font_Awesome_5_brands_github.svg.png" decoding="async" width="35" height="25" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/174px-Font_Awesome_5_brands_github.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/232px-Font_Awesome_5_brands_github.svg.png 2x" data-file-width="512" data-file-height="529">
         </a>

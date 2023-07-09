@@ -3,32 +3,71 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Add the Tailwind CSS CDN link here -->
-    <link href="https://cdn.tailwindcss.com/2.2.16/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 <!-- Display cards for each user -->
-<div class="flex justify-center">
-    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <!-- Iterate over users -->
-        <div class="max-w-sm rounded overflow-hidden shadow-lg" th:each="user : ${users}">
-            <!-- User image -->
-            <img class="w-full h-48 object-cover" th:src="${user.profileImage}" alt="User Image">
+<div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-16  md:mx-12 mx-4">
 
-            <div class="px-6 py-4">
-                <!-- User details -->
-                <div class="font-bold text-xl mb-2" th:text="${user.username}"></div>
-                <p class="text-gray-700 text-base" th:text="${user.major}"></p>
-                <!-- Add other user details as needed -->
-            </div>
-            <!-- View More button -->
-            <div class="px-6 py-4">
-<!--                <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"-->
-<!--                   th:href="@{/user/details/{id}(id=${user.id})}">View More</a>-->
-            </div>
-        </div>
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg  shadow-lg dark:bg-gray-800 dark:border-gray-700 " th:each="user : ${users}">
+    <a href="#">
+        <img class="object-cover w-full h-72" th:src="${user.profileImage != null and user.profileImage != '' ? user.profileImage : 'https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg'}" alt="User Image">
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" th:text="${user.username}"></h5>
+            <div class="font-bold text-xl mb-2" ></div>
+            <p class="text-gray-700 text-base" th:text="${user.major}"></p>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" th:text="${user.major}"></p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Read more
+            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
     </div>
 </div>
+</div>
+
+<!--<div class="flex justify-center mt-20">-->
+<!--    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">-->
+<!--        &lt;!&ndash; Iterate over users &ndash;&gt;-->
+<!--        <div class="max-w-sm rounded overflow-hidden shadow-lg" th:each="user : ${users}">-->
+<!--            <div class="card-container min-h-100 relative">-->
+<!--                &lt;!&ndash; User image &ndash;&gt;-->
+<!--                <div class="flex items-center h-3/4">-->
+<!--                    <img class="object-cover w-full h-full" th:src="${user.profileImage != null and user.profileImage != '' ? user.profileImage : 'https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg'}" alt="User Image">-->
+<!--                </div>-->
+
+<!--                <div class="h-1/4 w-full text-center absolute bottom-0">-->
+<!--                    <div class="px-6 py-4 flex-1">-->
+<!--                        &lt;!&ndash; User details &ndash;&gt;-->
+<!--                        <div class="font-bold text-xl mb-2" th:text="${user.username}"></div>-->
+<!--                        <p class="text-gray-700 text-base" th:text="${user.major}"></p>-->
+<!--                        &lt;!&ndash; Add other user details as needed &ndash;&gt;-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; View More button &ndash;&gt;-->
+<!--                    <div class="px-6 py-4">-->
+<!--                        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" th:href="@{/user/details/{id}(id=${user.id})}">View More</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!-- Add your JavaScript and other body elements here -->
 </body>
 </html>
+
+
+
+
