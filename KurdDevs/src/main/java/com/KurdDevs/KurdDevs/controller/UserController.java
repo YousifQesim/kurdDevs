@@ -150,18 +150,32 @@ public class UserController {
 
     @GetMapping("/dashboard")
     public String showDashboard(Model model, HttpServletRequest request) {
-        // Check if the user is logged in by verifying the presence of the "loggedInUser" cookie
-        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
-        if (loggedInUser == null) {
+        String loggedInUserEmail = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUserEmail == null) {
             return "redirect:/login"; // Redirect to the login page if the cookie is not present
         }
 
-        // Continue with rendering the dashboard page
+        // Retrieve the user using the email
+        User user = userService.getUserByEmail(loggedInUserEmail);
+        if (user == null) {
+            // User not found, handle the error
+            return "redirect:/login";
+        }
 
         List<User> users = userRepository.findAll(); // Retrieve all users from the UserRepository
 
         model.addAttribute("users", users); // Add the users list to the model
-
+        model.addAttribute("profileImageURL", user.getProfileImage());
         return "dashboardPage";
     }
+
+    @GetMapping("/logout")
+    public String logoutUser(HttpServletRequest request, HttpServletResponse response) {
+        CookieUtils.deleteCookie(request, response, "loggedInUser");
+
+        // Redirect to the login page after logging out
+        return "redirect:/login";
+    }
+
+
 }

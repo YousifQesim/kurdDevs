@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>User Profile</title>
   <!-- Include Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins&family=Rubik:wght@500&family=Tinos:ital,wght@1,700&display=swap');
@@ -77,12 +81,87 @@ element.style {
 font-family: 'Inter', sans-serif;
 
 }
+img{
+z-index:0;}
+.sidebar{
+z-index:100;
+}
   </style>
 </head>
 <body class="bg-gray-100">
+<button  onclick="toggleSidebar()" data-collapse-toggle="navbar-default" type="button" class=" sticky top-12 left-12 mt-8 ml-8 text-blue-900 border-2 border-solid border-blue-900 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+    </svg>
+</button>
+
 <div class="image-background">
 </div>
-<div class="container mx-auto py-8 px-4 mt-40 w-3/4">
+<div class="sidebar hidden z-50">
+<span
+        class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+        onclick="openSidebar()"
+>
+      <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
+    </span>
+    <div
+            class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
+    >
+        <div class="text-gray-100 text-xl">
+            <div class="p-2.5 mt-1 flex items-center">
+                <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+                <h1 class="font-bold text-gray-200 text-[15px] ml-3">KurdDevs</h1>
+                <i
+                        class="bi bi-x cursor-pointer ml-28 "
+                        onclick="openSidebar()"
+                ></i>
+            </div>
+            <div class="my-2 bg-gray-600 h-[1px]"></div>
+        </div>
+        <a href="/dashboard">
+
+
+            <div
+                    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+            >
+                <i class="bi bi-house-door-fill"></i>
+                <a  class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
+            </div>
+        </a>
+
+        <a href="/profile">
+
+
+            <div
+                    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+            >
+
+                <i class="bi bi-person-circle"></i>
+                <a href="/profile" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">Profile</a>
+
+            </div>   </a>
+
+
+            <div
+                    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+            >
+                <i class="bi bi-person-lines-fill"></i>
+                <a href="/profile/detail" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">My ProfileDetail</a>
+            </div>
+
+
+            <div
+                    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+            >
+                <i class="bi bi-box-arrow-in-right"></i>
+                <a  href="/logout" class="w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Logout</a>
+            </div>
+  =
+    </div>
+
+</div>
+<div class="container mx-auto py-8 px-4 mt-40 w-3/4 z-10">
   <div class="xl:bg-white xl:rounded-lg xl:shadow-xl p-8 relative flex flex-col xl:flex-row xl:items-center container-height relative">
     <div class="w-full md:w-2/4 h-auto  flex justify-center  shadow-xl border-opacity-75">
       <img th:src="@{${profileImageURL}}" alt="Profile Image" class=" rounded-lg object-cover object-center h-auto w-full">
@@ -165,5 +244,22 @@ font-family: 'Inter', sans-serif;
   </div>
 </div>
 
+<script type="text/javascript">
+      function dropdown() {
+        document.querySelector("#submenu").classList.toggle("hidden");
+        document.querySelector("#arrow").classList.toggle("rotate-0");
+      }
+      dropdown();
+
+      function openSidebar() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+      }
+    </script>
+<script>
+    function toggleSidebar() {
+      var sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>

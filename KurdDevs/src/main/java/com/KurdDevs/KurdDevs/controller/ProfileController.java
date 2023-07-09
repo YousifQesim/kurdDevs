@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
@@ -111,8 +112,25 @@ public class ProfileController {
         }
     }
 
+    @GetMapping("/profile/details/{id}")
+    public String showUserProfileDetailById(@PathVariable("id") Long id, Model model, HttpServletRequest request) {
+        User loggedInUser = getLoggedInUser(request);
+        if (loggedInUser == null) {
+            return "redirect:/login";
+        }
+
+        User user = userService.GetUserById(id);
+        if (user == null) {
+            return "redirect:/login";
+        }
+
+        model.addAttribute("user", user);
+        model.addAttribute("profileImageURL", user.getProfileImage());
+
+        return "profileDetail";
+    }
     @GetMapping("/profile/detail")
-    public String showUserProfileDetail(Model model, HttpServletRequest request) {
+    public String showUserProfileDetail( Model model, HttpServletRequest request) {
         String loggedInUserEmail = CookieUtils.getCookieValue(request, "loggedInUser");
         if (loggedInUserEmail == null) {
             return "redirect:/login";
@@ -127,6 +145,14 @@ public class ProfileController {
         model.addAttribute("profileImageURL", user.getProfileImage());
 
         return "profileDetail";
+    }
+
+    private User getLoggedInUser(HttpServletRequest request) {
+        String loggedInUserEmail = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUserEmail != null) {
+            return userService.getUserByEmail(loggedInUserEmail);
+        }
+        return null;
     }
 
 

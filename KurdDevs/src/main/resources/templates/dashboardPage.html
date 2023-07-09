@@ -4,6 +4,10 @@
 <head>
     <!-- Add the Tailwind CSS CDN link here -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
     <style>
         .card-container {
             display: flex;
@@ -13,58 +17,148 @@
     </style>
 </head>
 <body>
+
+<button  onclick="toggleSidebar()" data-collapse-toggle="navbar-default" type="button" class=" mt-8 ml-8 text-blue-900 border-2 border-solid border-blue-900 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+    </svg>
+</button>
+<div class="sidebar hidden">
+<span
+        class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+        onclick="openSidebar()"
+>
+      <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
+    </span>
+<div
+        class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
+>
+    <div class="text-gray-100 text-xl">
+        <div class="p-2.5 mt-1 flex items-center">
+            <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+            <h1 class="font-bold text-gray-200 text-[15px] ml-3">KurdDevs</h1>
+            <i
+                    class="bi bi-x cursor-pointer ml-28 "
+                    onclick="openSidebar()"
+            ></i>
+        </div>
+        <div class="my-2 bg-gray-600 h-[1px]"></div>
+    </div>
+
+
+
+    <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    >
+        <i class="bi bi-house-door-fill"></i>
+        <a  class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
+    </div>
+
+
+
+
+
+    <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    >
+
+        <i class="bi bi-person-circle"></i>
+        <a href="/profile" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">Profile</a>
+
+    </div>
+    <a href="/profile/detail">
+    <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    >
+        <i class="bi bi-person-lines-fill"></i>
+        <a href="/profile/detail" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">My ProfileDetail</a>
+    </div>
+    </a>
+    <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    >
+        <i class="bi bi-box-arrow-in-right"></i>
+        <a  href="/logout" class="w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Logout</a>
+    </div>
+
+</div>
+
+</div>
+
 <!-- Display cards for each user -->
 <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-16  md:mx-12 mx-4">
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg  shadow-lg dark:bg-gray-800 dark:border-gray-700 " th:each="user : ${users}">
-    <a href="#">
+<div class="space-y-1 max-w-sm bg-white border border-gray-200 rounded-lg  shadow-lg dark:bg-gray-800 dark:border-gray-700 " th:each="user : ${users}">
+    <div>
         <img class="object-cover w-full h-72" th:src="${user.profileImage != null and user.profileImage != '' ? user.profileImage : 'https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg'}" alt="User Image">
-    </a>
-    <div class="p-5">
-        <a href="#">
+    </div>
+    <div class="p-5 w-full text-center ">
+        <div >
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" th:text="${user.username}"></h5>
             <div class="font-bold text-xl mb-2" ></div>
-            <p class="text-gray-700 text-base" th:text="${user.major}"></p>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" th:text="${user.major}"></p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+            <p class="text-gray-700 text-base"  th:text="${user.major != null and user.major != '' ? user.major : 'NO Major Selected'}"></p>
+        </div>
+        <a th:href="@{/profile/details/{id}(id=${user.id})}" class="inline-flex items-center px-3 py-2 my-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Read more
             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
             </svg>
         </a>
     </div>
+
 </div>
 </div>
 
-<!--<div class="flex justify-center mt-20">-->
-<!--    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">-->
-<!--        &lt;!&ndash; Iterate over users &ndash;&gt;-->
-<!--        <div class="max-w-sm rounded overflow-hidden shadow-lg" th:each="user : ${users}">-->
-<!--            <div class="card-container min-h-100 relative">-->
-<!--                &lt;!&ndash; User image &ndash;&gt;-->
-<!--                <div class="flex items-center h-3/4">-->
-<!--                    <img class="object-cover w-full h-full" th:src="${user.profileImage != null and user.profileImage != '' ? user.profileImage : 'https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg'}" alt="User Image">-->
-<!--                </div>-->
-
-<!--                <div class="h-1/4 w-full text-center absolute bottom-0">-->
-<!--                    <div class="px-6 py-4 flex-1">-->
-<!--                        &lt;!&ndash; User details &ndash;&gt;-->
-<!--                        <div class="font-bold text-xl mb-2" th:text="${user.username}"></div>-->
-<!--                        <p class="text-gray-700 text-base" th:text="${user.major}"></p>-->
-<!--                        &lt;!&ndash; Add other user details as needed &ndash;&gt;-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; View More button &ndash;&gt;-->
-<!--                    <div class="px-6 py-4">-->
-<!--                        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" th:href="@{/user/details/{id}(id=${user.id})}">View More</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<form action="/logout" method="get">
+    <button type="submit">Logout</button>
+</form>
 
 <!-- Add your JavaScript and other body elements here -->
+
+<!--<script>-->
+<!--    const userMenuButton = document.getElementById('user-menu-button');-->
+<!--    const userDropdown = document.getElementById('user-dropdown');-->
+<!--    const logoutButton = document.getElementById('logout-button');-->
+
+<!--    userMenuButton.addEventListener('click', function () {-->
+<!--        const isExpanded = userMenuButton.getAttribute('aria-expanded') === 'true';-->
+<!--        userMenuButton.setAttribute('aria-expanded', !isExpanded);-->
+<!--        userDropdown.classList.toggle('hidden');-->
+<!--    });-->
+
+<!--    logoutButton.addEventListener('click', function () {-->
+<!--        // Perform logout actions here-->
+<!--        alert('Logging out...');-->
+<!--    });-->
+
+<!--    const navbarUserButton = document.querySelector('[data-collapse-toggle="navbar-user"]');-->
+<!--    const navbarUser = document.getElementById('navbar-user');-->
+
+<!--    navbarUserButton.addEventListener('click', function () {-->
+<!--        const isExpanded = navbarUserButton.getAttribute('aria-expanded') === 'true';-->
+<!--        navbarUserButton.setAttribute('aria-expanded', !isExpanded);-->
+<!--        navbarUser.classList.toggle('hidden');-->
+<!--    });-->
+<!--</script>-->
+<script type="text/javascript">
+      function dropdown() {
+        document.querySelector("#submenu").classList.toggle("hidden");
+        document.querySelector("#arrow").classList.toggle("rotate-0");
+      }
+      dropdown();
+
+      function openSidebar() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+      }
+    </script>
+<script>
+    function toggleSidebar() {
+      var sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
 
