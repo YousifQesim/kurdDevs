@@ -176,6 +176,13 @@ public class UserController {
         // Redirect to the login page after logging out
         return "redirect:/login";
     }
-
-
+    @GetMapping("/contact")
+    public String contact(Model model, HttpServletRequest request) {
+        String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
+        if (loggedInUser == null) {
+            return "redirect:/login"; // Redirect to the login page if the cookie is not present
+        }
+        model.addAttribute("userDto", new UserDto());
+        return "contact";
+    }
 }
