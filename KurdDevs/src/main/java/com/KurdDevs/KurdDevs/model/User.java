@@ -38,7 +38,8 @@ public class User {
 
     @Column(name = "linkedin_url")
     private String linkedinUrl;
-
+    @Column(name = "behance_url")
+    private String behance_url;
     @Column(name = "pdf_cv")
     private String pdfCv;
     @Column(name = "profileImage")
@@ -160,5 +161,13 @@ public class User {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getBehance_url() {
+        return behance_url;
+    }
+
+    public void setBehance_url(String behance_url) {
+        this.behance_url = behance_url;
     }
 }

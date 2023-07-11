@@ -28,6 +28,8 @@ public class UserDto {
 
     private String phoneNumber;
     private String location;
+    private String behance_url;
+
     public String getUsername() {
         return username;
     }
@@ -123,5 +125,14 @@ public class UserDto {
     public void setLocation(String location) {
         this.location = location;
     }
-// ...
+
+    public String getBehance_url() {
+        return behance_url;
+    }
+
+    public void setBehance_url(String behance_url) {
+        this.behance_url = behance_url;
+    }
+
+    // ...
 }

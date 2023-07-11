@@ -126,7 +126,7 @@ z-index:100;
                     class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
             >
                 <i class="bi bi-house-door-fill"></i>
-                <a  class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
+                <a href="/dashboard" class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
             </div>
         </a>
 
@@ -149,7 +149,12 @@ z-index:100;
                 <i class="bi bi-person-lines-fill"></i>
                 <a href="/profile/detail" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">My ProfileDetail</a>
             </div>
-
+        <div
+                class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        >
+            <i class="bi bi-envelope"></i>
+            <a href="/contact" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">Contact Us</a>
+        </div>
 
             <div
                     class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
@@ -164,7 +169,9 @@ z-index:100;
 <div class="container mx-auto py-8 px-4 mt-40 w-3/4 z-10">
   <div class="xl:bg-white xl:rounded-lg xl:shadow-xl p-8 relative flex flex-col xl:flex-row xl:items-center container-height relative">
     <div class="w-full md:w-2/4 h-auto  flex justify-center  shadow-xl border-opacity-75">
-      <img th:src="@{${profileImageURL}}" alt="Profile Image" class=" rounded-lg object-cover object-center h-auto w-full">
+        <img class="rounded-lg object-cover object-center h-auto w-full" th:src="${profileImageURL != null and profileImageURL != '' ? profileImageURL : 'https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg'}" alt="User Image">
+
+<!--        <img th:src="@{${profileImageURL}}" alt="Profile Image" class=" rounded-lg object-cover object-center h-auto w-full">-->
     </div>
     <div class="md:w-2/4  mt-6 md:mt-0 text-center my-0 flex flex-col items-center">
       <h6>Hello Everybody, i am</h6>
@@ -236,6 +243,12 @@ z-index:100;
 
         <a th:href="${user.linkedinUrl}" class="text-blue-500 hover:underline mx-2">
           <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" srcset="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-1024.png 2x" alt="Linkedin icon - Free download on Iconfinder" class="d-block mx-auto" width="35" height="25">
+        </a>
+                </span>
+          <span th:if="${not #strings.isEmpty(user.behance_url)}">
+
+        <a th:href="${user.behance_url}" class="text-blue-500 hover:underline mx-2">
+          <img src="   https://cdn-icons-png.flaticon.com/512/2504/2504762.png "  alt="Behance icon - Free download on Iconfinder" class="d-block mx-2" width="35" height="25">
         </a>
                 </span>
 

@@ -15,6 +15,34 @@
         p {
             font-family: 'Roboto', sans-serif;
         }
+         .image-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70vh; /* Set the height to 50% of the viewport height */
+      z-index: -1;
+    }
+    .image-background img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+    .container-height{
+    min-height:600px;
+
+    }
+
+    /* Media query for PC screens */
+    @media only screen and (min-width: 1280px) {
+      .image-background {
+        background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+      }
+    }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -24,6 +52,8 @@
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
     </svg>
 </button>
+<div class="image-background">
+</div>
 
 <div class="relative lg:py-20">
     <div class="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto xl:px-5 lg:flex-row">
@@ -82,6 +112,11 @@
                                         <input type="url" th:field="*{linkedinUrl}" class="border placeholder-gray-400 focus:outline-none focus:border-blue-600 w-full pt-4 pr-32 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md" />
                                     </div>
                                     <div class="relative">
+                                        <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Behance URL</p>
+
+                                        <input type="url" th:field="*{behance_url}" class="border placeholder-gray-400 focus:outline-none focus:border-blue-600 w-full pt-4 pr-32 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md" />
+                                    </div>
+                                    <div class="relative">
                                         <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">CV</p>
                                         <input type="file" name="pdfCv" class="border placeholder-gray-400 focus:outline-none focus:border-blue-600 w-full pt-4 pr-32 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md" />
                                     </div>
@@ -94,7 +129,7 @@
                                 <div class="flex items-center justify-center mt-8 gap-12 flex-wrap">
                                     <div class="relative w-3/4 xl:w-2.5/4 h-auto">
                                         <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">About me</p>
-                                        <textarea th:field="*{aboutSection}" class="border placeholder-gray-400 focus:outline-none focus:border-blue-600 w-full pt-4 pr-32 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"></textarea>
+                                        <textarea rows="6" cols="12" th:field="*{aboutSection}" class="border placeholder-gray-400 focus:outline-none focus:border-blue-600 w-full pt-4 pr-32 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +171,7 @@
                     class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
             >
                 <i class="bi bi-house-door-fill"></i>
-                <a  class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
+                <a href="/dashboard" class=" w-full flex justify-start text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
             </div>
 
 
@@ -159,7 +194,12 @@
                 <i class="bi bi-person-lines-fill"></i>
                 <a href="/profile/detail" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">My ProfileDetail</a>
             </div>
-
+        <div
+                class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        >
+            <i class="bi bi-envelope"></i>
+            <a href="/contact" class="w-full flex justify-start  text-[15px] ml-4 text-gray-200 font-bold">Contact Us</a>
+        </div>
 
             <div
                     class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"

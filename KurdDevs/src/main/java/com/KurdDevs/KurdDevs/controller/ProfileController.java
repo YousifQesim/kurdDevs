@@ -15,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
@@ -57,7 +56,7 @@ public class ProfileController {
     @PostMapping("/profile")
     public String updateProfile(@Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result, Model model,
                                 HttpServletRequest request,
-                                @RequestParam("profileImage") MultipartFile profileImageFile) {
+                                @RequestParam("profileImage") MultipartFile profileImageFile,@RequestParam("pdfCv") MultipartFile pdfCv) {
         // Similar to the showProfile method, validate if the user is logged in
 
         // Retrieve the user using the email from the loggedInUser cookie
@@ -80,6 +79,7 @@ public class ProfileController {
         user.setLinkedinUrl(userDto.getLinkedinUrl());
         user.setPhoneNumber(userDto.getPhoneNumber());
         user.setLocation(userDto.getLocation());
+        user.setBehance_url(userDto.getBehance_url());
         // Update other fields as needed
 
         // Handle profile image
@@ -91,6 +91,16 @@ public class ProfileController {
                         .path(profileImageFileName)
                         .toUriString();
                 user.setProfileImage(profileImageURL);
+            }
+        }
+        if (!pdfCv.isEmpty()) {
+            String pdfCvName = saveFile(pdfCv);
+            if (pdfCvName != null) {
+                String pdfCvURL = ServletUriComponentsBuilder.fromCurrentContextPath()
+                        .path("/uploads/")
+                        .path(pdfCvName)
+                        .toUriString();
+                user.setPdfCv(pdfCvURL);
             }
         }
 

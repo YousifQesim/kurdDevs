@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.net.URLDecoder;
@@ -170,12 +171,13 @@ public class UserController {
     }
 
     @GetMapping("/logout")
-    public String logoutUser(HttpServletRequest request, HttpServletResponse response) {
-        CookieUtils.deleteCookie(request, response, "loggedInUser");
-
-        // Redirect to the login page after logging out
-        return "redirect:/login";
+    public String logout(HttpServletResponse response) {
+       Cookie loggedInUser=new Cookie("loggedInUser",null);
+       loggedInUser.setMaxAge(0);
+       response.addCookie(loggedInUser);
+        return "redirect:/profile";
     }
+
     @GetMapping("/contact")
     public String contact(Model model, HttpServletRequest request) {
         String loggedInUser = CookieUtils.getCookieValue(request, "loggedInUser");
