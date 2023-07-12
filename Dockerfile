@@ -10,7 +10,7 @@ FROM adoptopenjdk/openjdk17:alpine-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the JAR file from the target directory to the container
+# Copy the JAR file from the target directory to the containe
 COPY target/*.jar app.jar
 
 # Specify the command to run when the container starts
