@@ -1,23 +1,6 @@
-# Use a base image with Java 17 installed
-FROM openjdk:17-jdk
-
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the necessary files to the container
-COPY pom.xml .
-COPY mysrc ./src
-
-
-# Build the Maven project
-RUN mvn clean package
-
-# Expose the port on which your application will run
-EXPOSE 8080
-
-# Set the command to run your application
-CMD ["java", "-jar", "target/KurdDevs-0.0.1-SNAPSHOT.jar"]
+FROM adoptopenjdk:11-jre-hotspot
+ADD KurdDevs/target/docker-spring-boot.jar docker-spring-boot.jar
+ENTRYPOINT ["java", "-jar", "docker-spring-boot.jar"]
 
 
 ##
