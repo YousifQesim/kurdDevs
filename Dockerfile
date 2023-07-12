@@ -1,9 +1,10 @@
 FROM adoptopenjdk:11-jre-hotspot
-ADD KurdDevs/target/docker-spring-boot.jar docker-spring-boot.jar
+VOLUME /tmp
+COPY target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "docker-spring-boot.jar"]
+EXPOSE 8080
 
-
-
+##
 ## Build stage
 ##
 #FROM maven:3.8.2-jdk-11 AS build
