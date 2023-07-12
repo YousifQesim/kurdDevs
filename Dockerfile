@@ -1,6 +1,6 @@
 FROM adoptopenjdk:11-jre-hotspot
 VOLUME /tmp
-COPY KurdDevs/target/docker-spring-boot.ja docker-spring-boot.jar
+COPY ./docker-spring-boot.ja docker-spring-boot.jar
 
 ENTRYPOINT ["java", "-jar", "docker-spring-boot.jar"]
 EXPOSE 8080
