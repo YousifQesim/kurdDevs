@@ -1,8 +1,22 @@
-FROM adoptopenjdk:11-jre-hotspot
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# Use a base image with Java 17 installed
+FROM adoptopenjdk:17-jdk-hotspot
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the necessary files to the container
+COPY pom.xml .
+COPY src ./src
+
+# Build the Maven project
+RUN mvn clean package
+
+# Expose the port on which your application will run
 EXPOSE 8080
+
+# Set the command to run your application
+CMD ["java", "-jar", "target/KurdDevs-0.0.1-SNAPSHOT.jar"]
+
 
 ##
 ## Build stage
