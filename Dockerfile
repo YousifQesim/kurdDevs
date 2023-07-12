@@ -7,7 +7,8 @@ WORKDIR /app
 
 # Copy the necessary files to the container
 COPY pom.xml .
-COPY src ./src
+COPY mysrc ./src
+
 
 # Build the Maven project
 RUN mvn clean package
