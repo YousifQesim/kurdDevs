@@ -3,7 +3,7 @@ ADD KurdDevs/target/docker-spring-boot.jar docker-spring-boot.jar
 ENTRYPOINT ["java", "-jar", "docker-spring-boot.jar"]
 
 
-##
+
 ## Build stage
 ##
 #FROM maven:3.8.2-jdk-11 AS build
