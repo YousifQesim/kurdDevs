@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="docker update">
-      <change afterPath="$PROJECT_DIR$/.idea/module.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update">
+      <change afterPath="$PROJECT_DIR$/.buildpacks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/DTO/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/DTO/UserLoginDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/KurdDevsApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/Repo/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/SecurityConfig/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/controller/ProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/cookies/CookieUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/FileStorageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/target/test-classes/com/KurdDevs/KurdDevs/KurdDevsApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -434,7 +418,35 @@
       <option name="project" value="LOCAL" />
       <updated>1689197523512</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="project update">
+      <created>1689247607855</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1689247607855</updated>
+    </task>
+    <task id="LOCAL-00038" summary="project update">
+      <created>1689248497876</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1689248497876</updated>
+    </task>
+    <task id="LOCAL-00039" summary="project update">
+      <created>1689249285001</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1689249285001</updated>
+    </task>
+    <task id="LOCAL-00040" summary="project update">
+      <created>1689250882897</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1689250882897</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -445,6 +457,7 @@
     <MESSAGE value="docker updatedd" />
     <MESSAGE value="docker updated" />
     <MESSAGE value="docker update" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker update" />
+    <MESSAGE value="project update" />
+    <option name="LAST_COMMIT_MESSAGE" value="project update" />
   </component>
 </project>
