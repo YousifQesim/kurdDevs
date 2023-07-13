@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update">
-      <change afterPath="$PROJECT_DIR$/.buildpacks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/target/test-classes/com/KurdDevs/KurdDevs/KurdDevsApplicationTests.class" beforeDir="false" />
-    </list>
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/KurdDevs" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -446,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689250882897</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="project update">
+      <created>1689253822968</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1689253822968</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
