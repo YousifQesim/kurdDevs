@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update" />
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,9 +71,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/yousi/OneDrive/Desktop/thyme",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
@@ -89,8 +94,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn install" />
       <command value="mvn clean" />
+      <command value="mvn install" />
     </option>
   </component>
   <component name="RunManager" selected="Application.KurdDevsApplication">
@@ -157,20 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687957690121</updated>
-    </task>
-    <task id="LOCAL-00001" summary="comment delete">
-      <created>1689088659862</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1689088659862</updated>
-    </task>
-    <task id="LOCAL-00002" summary="comment add">
-      <created>1689088756679</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1689088756679</updated>
     </task>
     <task id="LOCAL-00003" summary="docker update">
       <created>1689088940878</created>
@@ -501,7 +492,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689274542345</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="project update">
+      <created>1689275434336</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1689275434337</updated>
+    </task>
+    <task id="LOCAL-00051" summary="project update">
+      <created>1689277800232</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1689277800232</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
