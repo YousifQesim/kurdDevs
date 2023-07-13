@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="docker update">
+      <change afterPath="$PROJECT_DIR$/.idea/module.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/DTO/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/DTO/UserLoginDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/KurdDevsApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/Repo/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/SecurityConfig/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/controller/ProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/cookies/CookieUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/FileStorageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/test-classes/com/KurdDevs/KurdDevs/KurdDevsApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="58934516-e816-4714-91a3-3a1a77a02e5a" />
+        <option name="url" value="https://github.com/YusifQasim/kurdDevs.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2Rpr6FnVa9kTZ3K2NGCDSLcwG9s" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/yousi/OneDrive/Desktop/KurdDevs/KurdDevs/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.KurdDevs.KurdDevs.SecurityConfig" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs\KurdDevs\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs\KurdDevs" />
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs" />
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs\KurdDevs\target" />
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs\KurdDevs\src\main\resources\static" />
+      <recent name="C:\Users\yousi\OneDrive\Desktop\KurdDevs\KurdDevs\src\main\resources\images" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.KurdDevsApplication">
+    <configuration name="KurdDevsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.KurdDevs.KurdDevs.KurdDevsApplication" />
+      <module name="KurdDevs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.KurdDevs.KurdDevs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in KurdDevs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KurdDevs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="docker-spring-boot.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/docker-spring-boot.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="KurdDevs/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="KurdDevs/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.KurdDevsApplication" />
+        <item itemvalue="JUnit.All in KurdDevs" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.KurdDevs/Dockerfile" />
+        <item itemvalue="JAR Application.docker-spring-boot.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="" />
+      <created>1687957690121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687957690121</updated>
+    </task>
+    <task id="LOCAL-00001" summary="comment delete">
+      <created>1689088659862</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689088659862</updated>
+    </task>
+    <task id="LOCAL-00002" summary="comment add">
+      <created>1689088756679</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689088756679</updated>
+    </task>
+    <task id="LOCAL-00003" summary="docker update">
+      <created>1689088940878</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689088940878</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docker update">
+      <created>1689089044848</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689089044848</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docker update">
+      <created>1689090667528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689090667528</updated>
+    </task>
+    <task id="LOCAL-00006" summary="docker update">
+      <created>1689172357299</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689172357300</updated>
+    </task>
+    <task id="LOCAL-00007" summary="docker update">
+      <created>1689172669102</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689172669102</updated>
+    </task>
+    <task id="LOCAL-00008" summary="docker update">
+      <created>1689172819126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689172819126</updated>
+    </task>
+    <task id="LOCAL-00009" summary="docker update">
+      <created>1689172933454</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689172933454</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docker update">
+      <created>1689173688653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689173688653</updated>
+    </task>
+    <task id="LOCAL-00011" summary="docker update">
+      <created>1689173722720</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689173722720</updated>
+    </task>
+    <task id="LOCAL-00012" summary="docker update">
+      <created>1689173903017</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689173903017</updated>
+    </task>
+    <task id="LOCAL-00013" summary="docker update">
+      <created>1689174006068</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174006068</updated>
+    </task>
+    <task id="LOCAL-00014" summary="docker update">
+      <created>1689174168506</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174168506</updated>
+    </task>
+    <task id="LOCAL-00015" summary="docker update">
+      <created>1689174371767</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174371767</updated>
+    </task>
+    <task id="LOCAL-00016" summary="docker update">
+      <created>1689174538253</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174538253</updated>
+    </task>
+    <task id="LOCAL-00017" summary="docker update">
+      <created>1689174683627</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174683627</updated>
+    </task>
+    <task id="LOCAL-00018" summary="docker update">
+      <created>1689174960122</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174960122</updated>
+    </task>
+    <task id="LOCAL-00019" summary="docker update">
+      <created>1689185887582</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689185887582</updated>
+    </task>
+    <task id="LOCAL-00020" summary="railway.json add">
+      <created>1689186212657</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689186212657</updated>
+    </task>
+    <task id="LOCAL-00021" summary="railway add">
+      <created>1689187644482</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689187644482</updated>
+    </task>
+    <task id="LOCAL-00022" summary="railway add">
+      <created>1689190049967</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689190049967</updated>
+    </task>
+    <task id="LOCAL-00023" summary="railway add">
+      <created>1689191324817</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689191324817</updated>
+    </task>
+    <task id="LOCAL-00024" summary="docker update">
+      <created>1689191466645</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689191466645</updated>
+    </task>
+    <task id="LOCAL-00025" summary="docker update">
+      <created>1689191579850</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1689191579850</updated>
+    </task>
+    <task id="LOCAL-00026" summary="docker update">
+      <created>1689193825804</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689193825804</updated>
+    </task>
+    <task id="LOCAL-00027" summary="docker updatedd">
+      <created>1689193857479</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689193857479</updated>
+    </task>
+    <task id="LOCAL-00028" summary="docker updatedd">
+      <created>1689193957965</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1689193957965</updated>
+    </task>
+    <task id="LOCAL-00029" summary="docker updatedd">
+      <created>1689194757792</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1689194757792</updated>
+    </task>
+    <task id="LOCAL-00030" summary="docker updated">
+      <created>1689194865056</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1689194865056</updated>
+    </task>
+    <task id="LOCAL-00031" summary="docker update">
+      <created>1689195189906</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689195189906</updated>
+    </task>
+    <task id="LOCAL-00032" summary="docker update">
+      <created>1689195342493</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1689195342493</updated>
+    </task>
+    <task id="LOCAL-00033" summary="docker update">
+      <created>1689195550124</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1689195550124</updated>
+    </task>
+    <task id="LOCAL-00034" summary="docker update">
+      <created>1689195641558</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1689195641558</updated>
+    </task>
+    <task id="LOCAL-00035" summary="docker update">
+      <created>1689196865482</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1689196865482</updated>
+    </task>
+    <task id="LOCAL-00036" summary="docker update">
+      <created>1689197523512</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1689197523512</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="comment delete" />
+    <MESSAGE value="comment add" />
+    <MESSAGE value="railway.json add" />
+    <MESSAGE value="railway add" />
+    <MESSAGE value="docker updatedd" />
+    <MESSAGE value="docker updated" />
+    <MESSAGE value="docker update" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker update" />
+  </component>
+</project>
