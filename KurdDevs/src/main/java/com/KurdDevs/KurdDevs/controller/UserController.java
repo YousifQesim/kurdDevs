@@ -105,7 +105,7 @@ public class UserController {
         }
 
         // Redirect with a query parameter indicating the activation status
-        return "redirect:/login?activated=true";
+        return "redirect:https://kurddevs.onrender.com/login?activated=true";
     }
 
 
