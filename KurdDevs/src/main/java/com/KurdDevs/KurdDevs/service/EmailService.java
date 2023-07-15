@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 @Service
@@ -50,7 +48,7 @@ public class EmailService {
             String emailText = "<html><body>"
                     + "<b><h1>Hi Dear " + user.getUsername() + "</h1></b>"
                     + "<p>Thank you for registering with our platform. To activate your account, please click on the following link:</p>"
-                    + "<a href=\"https://kurddevs.onrender.com/activate?activationToken=" + URLEncoder.encode(activationToken, StandardCharsets.UTF_8) + "\">Activate Account</a>"
+                    + "<a href=>\"https://kurddevs.onrender.com/activate?activationToken=\" + URLEncoder.encode(activationToken, StandardCharsets.UTF_8) + \"\\\"</a>"
                     + "<p>We appreciate your interest and look forward to providing you with a great user experience.</p>"
                     + "<p>Sincerely,</p>"
                     + "<p><b>KurdDevsTeam(KDT)</b></p>"
