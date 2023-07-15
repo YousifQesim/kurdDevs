@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
     </list>
@@ -162,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687957690121</updated>
-    </task>
-    <task id="LOCAL-00009" summary="docker update">
-      <created>1689172933454</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1689172933454</updated>
     </task>
     <task id="LOCAL-00010" summary="docker update">
       <created>1689173688653</created>
@@ -506,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689376325365</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="project update">
+      <created>1689381374891</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1689381374891</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
