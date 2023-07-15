@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/service/EmailService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
