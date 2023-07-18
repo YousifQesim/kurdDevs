@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="roll">
       <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/FileStorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/resources/templates/dashboardPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/resources/templates/dashboardPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KurdDevs~new-origin_main" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs~new-origin_main" afterDir="false" />
+=======
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/KurdDevsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/KurdDevsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/KurdDevsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/classes/com/KurdDevs/KurdDevs/KurdDevsApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/docker-spring-boot.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/TEST-com.KurdDevs.KurdDevs.KurdDevsApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/target/surefire-reports/com.KurdDevs.KurdDevs.KurdDevsApplicationTests.txt" afterDir="false" />
+>>>>>>> parent of b4da6d6 (update email link)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
