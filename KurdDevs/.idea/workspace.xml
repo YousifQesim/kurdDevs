@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="roll">
-      <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/java/com/KurdDevs/KurdDevs/service/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/resources/templates/dashboardPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs/KurdDevs/src/main/resources/templates/dashboardPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KurdDevs~new-origin_main" beforeDir="false" afterPath="$PROJECT_DIR$/KurdDevs~new-origin_main" afterDir="false" />
-    </list>
+    <list default="true" id="0890adab-adae-444e-93e7-a1e056a95ac8" name="Changes" comment="project update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +28,7 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/KurdDevs" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -103,8 +98,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean" />
       <command value="mvn install" />
+      <command value="mvn clean" />
     </option>
   </component>
   <component name="RunManager" selected="Application.KurdDevsApplication">
@@ -173,6 +168,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687957690121</updated>
+    </task>
+    <task id="LOCAL-00017" summary="docker update">
+      <created>1689174683627</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689174683627</updated>
     </task>
     <task id="LOCAL-00018" summary="docker update">
       <created>1689174960122</created>
@@ -510,14 +512,7 @@
       <option name="project" value="LOCAL" />
       <updated>1689421505365</updated>
     </task>
-    <task id="LOCAL-00066" summary="roll">
-      <created>1689702688232</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1689702688232</updated>
-    </task>
-    <option name="localTasksCounter" value="67" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,7 +536,6 @@
     <MESSAGE value="docker updated" />
     <MESSAGE value="docker update" />
     <MESSAGE value="project update" />
-    <MESSAGE value="roll" />
-    <option name="LAST_COMMIT_MESSAGE" value="roll" />
+    <option name="LAST_COMMIT_MESSAGE" value="project update" />
   </component>
 </project>
